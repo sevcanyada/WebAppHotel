@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WebAppHotel.ViewModel.RoomBookingViewModel>
+    <table style="width: 100%">
+
+        <thead>
+
+
+            <tr>
+
+                <th>
+                    Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    Booking From
+                </th>
+                <th>
+                    Booking To
+                </th>
+                <th>
+                    Room
+                </th>
+                <th>
+                    Number Of Members
+                </th>
+                <th>
+                    Number Of days
+                </th>
+                <th>
+                  Room Price
+                </th>
+                <th>
+                    Total Amount
+                </th>
+            </tr>
+        </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.CustomerName
+                    </td>
+                    <td>
+                        @item.CustomerAddress
+                    </td>
+                    <td>
+                        @item.BokkingFrom.ToString(format: "dd-MMM-yyyy")
+                    </td>
+                    <td>
+                        @item.BookingTo.ToString(format: "dd-MMM-yyyy")
+
+                    </td>
+                    <td>
+                        @item.RoomNumber
+                    </td>
+                    <td>
+                        @item.NuberOfMembers
+                    </td>
+                    <td>
+                        @item.NumberOfDays
+                    </td>
+                    <td>
+                        @item.RoomPrice.ToString(format:"#,##0.00")
+                    </td>
+                    <td>
+                        @item.TotalAmount.ToString(format: "#,##0.00")
+
+                    </td>
+                    <td>
+                        @item.CustomerName
+                    </td>
+                </tr>
+            }
+    </tbody>
+
+    </table>
